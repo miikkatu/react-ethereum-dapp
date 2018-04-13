@@ -1,0 +1,32 @@
+{
+  "name": "react-ethereum-dapp",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-scripts": "1.1.4",
+    "redux": "^3.7.2",
+    "redux-actions": "^2.3.0",
+    "truffle-contract": "^3.0.4",
+    "web3": "^1.0.0-beta.33"
+  },
+  "devDependencies": {
+    "node-sass-chokidar": "^1.2.2",
+    "npm-run-all": "^4.1.2"
+  },
+  "scripts": {
+    "build": "npm run build-css && react-scripts build",
+    "build-js": "react-scripts build",
+    "build-css": "node-sass-chokidar --include-path ./node_modules/ ./src -o ./src",
+    "eject": "react-scripts eject",
+    "testrpc": "testrpc",
+    "start": "npm-run-all -p start-js watch-css ",
+    "start-js": "react-scripts start",
+    "test": "react-scripts test --env=jsdom",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive"
+  }
+}
