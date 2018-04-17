@@ -2,10 +2,14 @@ import { handleAction } from 'redux-actions';
 
 import * as actions from './actions';
 
-const myReducer = handleAction(
+const state = handleAction(
   actions.myAction,
-  (state, action) => action.payload || state,
+  (state, action) => ({
+    myResult: action.payload || state
+  }),
   {}
 );
 
-export default myReducer;
+export default {
+  state
+};
